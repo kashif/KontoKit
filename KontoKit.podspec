@@ -11,6 +11,6 @@ Pod::Spec.new do |s|
   s.source_files = 'KontoKit/*.{h,m}'
   s.resources    = "KontoKit/Resources/Cards/*.png", "KontoKit/Resources/*.png"
 
-  s.framework  = 'QuartzCore'
+  s.framework    = 'QuartzCore'
   s.requires_arc = true
 end
