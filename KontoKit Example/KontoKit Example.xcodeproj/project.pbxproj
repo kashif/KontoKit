@@ -28,6 +28,8 @@
 		4BC0C09E1769CBFE00EA19E8 /* textfield.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BC0C0991769CBFE00EA19E8 /* textfield.png */; };
 		4BC0C09F1769CBFE00EA19E8 /* textfield@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BC0C09A1769CBFE00EA19E8 /* textfield@2x.png */; };
 		4BC0C0A01769CBFE00EA19E8 /* textfield@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BC0C09A1769CBFE00EA19E8 /* textfield@2x.png */; };
+		4BC0C0A31769CCBA00EA19E8 /* KKCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BC0C0A21769CCBA00EA19E8 /* KKCard.m */; };
+		4BC0C0A41769CCBA00EA19E8 /* KKCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BC0C0A21769CCBA00EA19E8 /* KKCard.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +66,8 @@
 		4BC0C0981769CBFE00EA19E8 /* gradient@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gradient@2x.png"; sourceTree = "<group>"; };
 		4BC0C0991769CBFE00EA19E8 /* textfield.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = textfield.png; sourceTree = "<group>"; };
 		4BC0C09A1769CBFE00EA19E8 /* textfield@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "textfield@2x.png"; sourceTree = "<group>"; };
+		4BC0C0A11769CCBA00EA19E8 /* KKCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKCard.h; sourceTree = "<group>"; };
+		4BC0C0A21769CCBA00EA19E8 /* KKCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKCard.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +174,8 @@
 			isa = PBXGroup;
 			children = (
 				4BC0C0961769CBFE00EA19E8 /* Resources */,
+				4BC0C0A11769CCBA00EA19E8 /* KKCard.h */,
+				4BC0C0A21769CCBA00EA19E8 /* KKCard.m */,
 			);
 			name = KontoKit;
 			path = ../KontoKit;
@@ -310,6 +316,7 @@
 			files = (
 				4BC0C06A1769CBA900EA19E8 /* main.m in Sources */,
 				4BC0C06E1769CBA900EA19E8 /* AppDelegate.m in Sources */,
+				4BC0C0A31769CCBA00EA19E8 /* KKCard.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,6 +325,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4BC0C0891769CBA900EA19E8 /* KontoKit_ExampleTests.m in Sources */,
+				4BC0C0A41769CCBA00EA19E8 /* KKCard.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
