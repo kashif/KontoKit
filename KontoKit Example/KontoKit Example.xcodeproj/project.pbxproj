@@ -30,6 +30,14 @@
 		4BC0C0A01769CBFE00EA19E8 /* textfield@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BC0C09A1769CBFE00EA19E8 /* textfield@2x.png */; };
 		4BC0C0A31769CCBA00EA19E8 /* KKCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BC0C0A21769CCBA00EA19E8 /* KKCard.m */; };
 		4BC0C0A41769CCBA00EA19E8 /* KKCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BC0C0A21769CCBA00EA19E8 /* KKCard.m */; };
+		4BC0C0A71769CE6800EA19E8 /* KKView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BC0C0A61769CE6800EA19E8 /* KKView.m */; };
+		4BC0C0A81769CE6800EA19E8 /* KKView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BC0C0A61769CE6800EA19E8 /* KKView.m */; };
+		4BC0C0AC1769D10700EA19E8 /* KKCardNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BC0C0AB1769D10700EA19E8 /* KKCardNumber.m */; };
+		4BC0C0AD1769D10700EA19E8 /* KKCardNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BC0C0AB1769D10700EA19E8 /* KKCardNumber.m */; };
+		4BC0C0B01769D12800EA19E8 /* KKCardBLZ.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BC0C0AF1769D12800EA19E8 /* KKCardBLZ.m */; };
+		4BC0C0B11769D12800EA19E8 /* KKCardBLZ.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BC0C0AF1769D12800EA19E8 /* KKCardBLZ.m */; };
+		4BC0C0B41769D2AA00EA19E8 /* KKTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BC0C0B31769D2AA00EA19E8 /* KKTextField.m */; };
+		4BC0C0B51769D2AA00EA19E8 /* KKTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BC0C0B31769D2AA00EA19E8 /* KKTextField.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +76,15 @@
 		4BC0C09A1769CBFE00EA19E8 /* textfield@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "textfield@2x.png"; sourceTree = "<group>"; };
 		4BC0C0A11769CCBA00EA19E8 /* KKCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKCard.h; sourceTree = "<group>"; };
 		4BC0C0A21769CCBA00EA19E8 /* KKCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKCard.m; sourceTree = "<group>"; };
+		4BC0C0A51769CE6800EA19E8 /* KKView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKView.h; sourceTree = "<group>"; };
+		4BC0C0A61769CE6800EA19E8 /* KKView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKView.m; sourceTree = "<group>"; };
+		4BC0C0A91769CF0400EA19E8 /* KKCardType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKCardType.h; sourceTree = "<group>"; };
+		4BC0C0AA1769D10700EA19E8 /* KKCardNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKCardNumber.h; sourceTree = "<group>"; };
+		4BC0C0AB1769D10700EA19E8 /* KKCardNumber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKCardNumber.m; sourceTree = "<group>"; };
+		4BC0C0AE1769D12800EA19E8 /* KKCardBLZ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKCardBLZ.h; sourceTree = "<group>"; };
+		4BC0C0AF1769D12800EA19E8 /* KKCardBLZ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKCardBLZ.m; sourceTree = "<group>"; };
+		4BC0C0B21769D2AA00EA19E8 /* KKTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKTextField.h; sourceTree = "<group>"; };
+		4BC0C0B31769D2AA00EA19E8 /* KKTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKTextField.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +193,15 @@
 				4BC0C0961769CBFE00EA19E8 /* Resources */,
 				4BC0C0A11769CCBA00EA19E8 /* KKCard.h */,
 				4BC0C0A21769CCBA00EA19E8 /* KKCard.m */,
+				4BC0C0A51769CE6800EA19E8 /* KKView.h */,
+				4BC0C0A61769CE6800EA19E8 /* KKView.m */,
+				4BC0C0A91769CF0400EA19E8 /* KKCardType.h */,
+				4BC0C0AA1769D10700EA19E8 /* KKCardNumber.h */,
+				4BC0C0AB1769D10700EA19E8 /* KKCardNumber.m */,
+				4BC0C0AE1769D12800EA19E8 /* KKCardBLZ.h */,
+				4BC0C0AF1769D12800EA19E8 /* KKCardBLZ.m */,
+				4BC0C0B21769D2AA00EA19E8 /* KKTextField.h */,
+				4BC0C0B31769D2AA00EA19E8 /* KKTextField.m */,
 			);
 			name = KontoKit;
 			path = ../KontoKit;
@@ -317,6 +343,10 @@
 				4BC0C06A1769CBA900EA19E8 /* main.m in Sources */,
 				4BC0C06E1769CBA900EA19E8 /* AppDelegate.m in Sources */,
 				4BC0C0A31769CCBA00EA19E8 /* KKCard.m in Sources */,
+				4BC0C0A71769CE6800EA19E8 /* KKView.m in Sources */,
+				4BC0C0AC1769D10700EA19E8 /* KKCardNumber.m in Sources */,
+				4BC0C0B01769D12800EA19E8 /* KKCardBLZ.m in Sources */,
+				4BC0C0B41769D2AA00EA19E8 /* KKTextField.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,6 +356,10 @@
 			files = (
 				4BC0C0891769CBA900EA19E8 /* KontoKit_ExampleTests.m in Sources */,
 				4BC0C0A41769CCBA00EA19E8 /* KKCard.m in Sources */,
+				4BC0C0A81769CE6800EA19E8 /* KKView.m in Sources */,
+				4BC0C0AD1769D10700EA19E8 /* KKCardNumber.m in Sources */,
+				4BC0C0B11769D12800EA19E8 /* KKCardBLZ.m in Sources */,
+				4BC0C0B51769D2AA00EA19E8 /* KKTextField.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
