@@ -7,11 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "KKCardType.h"
 
 @interface KKCardBLZ : NSObject
 
 @property (nonatomic, readonly) NSString* string;
+@property (nonatomic, readonly) KKCardType cardType;
 
 + (id)cardBLZWithString:(NSString *)string;
 - (id)initWithString:(NSString *)string;
+- (NSString*)string;
+- (KKCardType)cardType;
+
 @end
