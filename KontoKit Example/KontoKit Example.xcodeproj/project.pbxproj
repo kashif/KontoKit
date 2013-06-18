@@ -38,6 +38,30 @@
 		4BC0C0B11769D12800EA19E8 /* KKCardBLZ.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BC0C0AF1769D12800EA19E8 /* KKCardBLZ.m */; };
 		4BC0C0B41769D2AA00EA19E8 /* KKTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BC0C0B31769D2AA00EA19E8 /* KKTextField.m */; };
 		4BC0C0B51769D2AA00EA19E8 /* KKTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BC0C0B31769D2AA00EA19E8 /* KKTextField.m */; };
+		4BC955311770570300317252 /* hypovereinsbank.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BC955251770570300317252 /* hypovereinsbank.png */; };
+		4BC955321770570300317252 /* hypovereinsbank.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BC955251770570300317252 /* hypovereinsbank.png */; };
+		4BC955331770570300317252 /* hypovereinsbank@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BC955261770570300317252 /* hypovereinsbank@2x.png */; };
+		4BC955341770570300317252 /* hypovereinsbank@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BC955261770570300317252 /* hypovereinsbank@2x.png */; };
+		4BC955351770570300317252 /* deutschebank@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BC955271770570300317252 /* deutschebank@2x.png */; };
+		4BC955361770570300317252 /* deutschebank@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BC955271770570300317252 /* deutschebank@2x.png */; };
+		4BC955371770570300317252 /* deutschebank.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BC955281770570300317252 /* deutschebank.png */; };
+		4BC955381770570300317252 /* deutschebank.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BC955281770570300317252 /* deutschebank.png */; };
+		4BC955391770570300317252 /* raiffeisenbanken.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BC955291770570300317252 /* raiffeisenbanken.png */; };
+		4BC9553A1770570300317252 /* raiffeisenbanken.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BC955291770570300317252 /* raiffeisenbanken.png */; };
+		4BC9553B1770570300317252 /* raiffeisenbanken@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BC9552A1770570300317252 /* raiffeisenbanken@2x.png */; };
+		4BC9553C1770570300317252 /* raiffeisenbanken@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BC9552A1770570300317252 /* raiffeisenbanken@2x.png */; };
+		4BC9553D1770570300317252 /* commerzbank.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BC9552B1770570300317252 /* commerzbank.png */; };
+		4BC9553E1770570300317252 /* commerzbank.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BC9552B1770570300317252 /* commerzbank.png */; };
+		4BC9553F1770570300317252 /* commerzbank@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BC9552C1770570300317252 /* commerzbank@2x.png */; };
+		4BC955401770570300317252 /* commerzbank@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BC9552C1770570300317252 /* commerzbank@2x.png */; };
+		4BC955411770570300317252 /* sparkasse.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BC9552D1770570300317252 /* sparkasse.png */; };
+		4BC955421770570300317252 /* sparkasse.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BC9552D1770570300317252 /* sparkasse.png */; };
+		4BC955431770570300317252 /* sparkasse@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BC9552E1770570300317252 /* sparkasse@2x.png */; };
+		4BC955441770570300317252 /* sparkasse@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BC9552E1770570300317252 /* sparkasse@2x.png */; };
+		4BC955451770570300317252 /* postbank.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BC9552F1770570300317252 /* postbank.png */; };
+		4BC955461770570300317252 /* postbank.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BC9552F1770570300317252 /* postbank.png */; };
+		4BC955471770570300317252 /* postbank@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BC955301770570300317252 /* postbank@2x.png */; };
+		4BC955481770570300317252 /* postbank@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BC955301770570300317252 /* postbank@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +109,18 @@
 		4BC0C0AF1769D12800EA19E8 /* KKCardBLZ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKCardBLZ.m; sourceTree = "<group>"; };
 		4BC0C0B21769D2AA00EA19E8 /* KKTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKTextField.h; sourceTree = "<group>"; };
 		4BC0C0B31769D2AA00EA19E8 /* KKTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKTextField.m; sourceTree = "<group>"; };
+		4BC955251770570300317252 /* hypovereinsbank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hypovereinsbank.png; sourceTree = "<group>"; };
+		4BC955261770570300317252 /* hypovereinsbank@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hypovereinsbank@2x.png"; sourceTree = "<group>"; };
+		4BC955271770570300317252 /* deutschebank@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "deutschebank@2x.png"; sourceTree = "<group>"; };
+		4BC955281770570300317252 /* deutschebank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = deutschebank.png; sourceTree = "<group>"; };
+		4BC955291770570300317252 /* raiffeisenbanken.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = raiffeisenbanken.png; sourceTree = "<group>"; };
+		4BC9552A1770570300317252 /* raiffeisenbanken@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "raiffeisenbanken@2x.png"; sourceTree = "<group>"; };
+		4BC9552B1770570300317252 /* commerzbank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = commerzbank.png; sourceTree = "<group>"; };
+		4BC9552C1770570300317252 /* commerzbank@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "commerzbank@2x.png"; sourceTree = "<group>"; };
+		4BC9552D1770570300317252 /* sparkasse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sparkasse.png; sourceTree = "<group>"; };
+		4BC9552E1770570300317252 /* sparkasse@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sparkasse@2x.png"; sourceTree = "<group>"; };
+		4BC9552F1770570300317252 /* postbank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = postbank.png; sourceTree = "<group>"; };
+		4BC955301770570300317252 /* postbank@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "postbank@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -221,6 +257,18 @@
 		4BC0C0971769CBFE00EA19E8 /* Cards */ = {
 			isa = PBXGroup;
 			children = (
+				4BC955251770570300317252 /* hypovereinsbank.png */,
+				4BC955261770570300317252 /* hypovereinsbank@2x.png */,
+				4BC955271770570300317252 /* deutschebank@2x.png */,
+				4BC955281770570300317252 /* deutschebank.png */,
+				4BC955291770570300317252 /* raiffeisenbanken.png */,
+				4BC9552A1770570300317252 /* raiffeisenbanken@2x.png */,
+				4BC9552B1770570300317252 /* commerzbank.png */,
+				4BC9552C1770570300317252 /* commerzbank@2x.png */,
+				4BC9552D1770570300317252 /* sparkasse.png */,
+				4BC9552E1770570300317252 /* sparkasse@2x.png */,
+				4BC9552F1770570300317252 /* postbank.png */,
+				4BC955301770570300317252 /* postbank@2x.png */,
 			);
 			path = Cards;
 			sourceTree = "<group>";
@@ -297,12 +345,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				4BC0C0681769CBA900EA19E8 /* InfoPlist.strings in Resources */,
+				4BC9553B1770570300317252 /* raiffeisenbanken@2x.png in Resources */,
 				4BC0C0701769CBA900EA19E8 /* Default.png in Resources */,
 				4BC0C0721769CBA900EA19E8 /* Default@2x.png in Resources */,
 				4BC0C0741769CBA900EA19E8 /* Default-568h@2x.png in Resources */,
+				4BC9553D1770570300317252 /* commerzbank.png in Resources */,
 				4BC0C09B1769CBFE00EA19E8 /* gradient@2x.png in Resources */,
 				4BC0C09D1769CBFE00EA19E8 /* textfield.png in Resources */,
+				4BC955371770570300317252 /* deutschebank.png in Resources */,
+				4BC955311770570300317252 /* hypovereinsbank.png in Resources */,
 				4BC0C09F1769CBFE00EA19E8 /* textfield@2x.png in Resources */,
+				4BC9553F1770570300317252 /* commerzbank@2x.png in Resources */,
+				4BC955331770570300317252 /* hypovereinsbank@2x.png in Resources */,
+				4BC955411770570300317252 /* sparkasse.png in Resources */,
+				4BC955391770570300317252 /* raiffeisenbanken.png in Resources */,
+				4BC955431770570300317252 /* sparkasse@2x.png in Resources */,
+				4BC955351770570300317252 /* deutschebank@2x.png in Resources */,
+				4BC955451770570300317252 /* postbank.png in Resources */,
+				4BC955471770570300317252 /* postbank@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,9 +371,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				4BC0C0861769CBA900EA19E8 /* InfoPlist.strings in Resources */,
+				4BC955421770570300317252 /* sparkasse.png in Resources */,
+				4BC9553C1770570300317252 /* raiffeisenbanken@2x.png in Resources */,
+				4BC955321770570300317252 /* hypovereinsbank.png in Resources */,
 				4BC0C09C1769CBFE00EA19E8 /* gradient@2x.png in Resources */,
 				4BC0C09E1769CBFE00EA19E8 /* textfield.png in Resources */,
+				4BC955381770570300317252 /* deutschebank.png in Resources */,
 				4BC0C0A01769CBFE00EA19E8 /* textfield@2x.png in Resources */,
+				4BC955361770570300317252 /* deutschebank@2x.png in Resources */,
+				4BC955401770570300317252 /* commerzbank@2x.png in Resources */,
+				4BC9553A1770570300317252 /* raiffeisenbanken.png in Resources */,
+				4BC955461770570300317252 /* postbank.png in Resources */,
+				4BC9553E1770570300317252 /* commerzbank.png in Resources */,
+				4BC955441770570300317252 /* sparkasse@2x.png in Resources */,
+				4BC955481770570300317252 /* postbank@2x.png in Resources */,
+				4BC955341770570300317252 /* hypovereinsbank@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -524,6 +596,7 @@
 				4BC0C08E1769CBA900EA19E8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4BC0C08F1769CBA900EA19E8 /* Build configuration list for PBXNativeTarget "KontoKit ExampleTests" */ = {
 			isa = XCConfigurationList;
@@ -532,6 +605,7 @@
 				4BC0C0911769CBA900EA19E8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
