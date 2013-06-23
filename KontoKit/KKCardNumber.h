@@ -16,4 +16,6 @@
 - (id) initWithString:(NSString *)string;
 - (NSString *)string;
 
+- (BOOL)isValid;
+
 @end

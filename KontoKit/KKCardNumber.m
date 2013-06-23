@@ -39,4 +39,9 @@
     return number;
 }
 
+- (BOOL)isValid
+{
+    return false;
+}
+
 @end

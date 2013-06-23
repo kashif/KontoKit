@@ -42,6 +42,11 @@
     return blz;
 }
 
+- (BOOL)isValid
+{
+    return false;
+}
+
 - (KKCardType)cardType
 {
     if (blz.length < 7) return KKCardTypeUnknown;

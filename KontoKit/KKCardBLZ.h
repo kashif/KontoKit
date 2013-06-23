@@ -19,4 +19,6 @@
 - (NSString*)string;
 - (KKCardType)cardType;
 
+- (BOOL)isValid;
+
 @end

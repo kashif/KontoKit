@@ -10,4 +10,6 @@
 
 @interface KKTextField : UITextField
 
++ (NSString*)textByRemovingUselessSpacesFromString:(NSString*)string;
+
 @end
