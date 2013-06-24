@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "KKView.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <KKViewDelegate>
+
+@property IBOutlet KKView* kontoView;
 
 @end

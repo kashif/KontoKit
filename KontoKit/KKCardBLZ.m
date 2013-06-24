@@ -37,6 +37,38 @@
     return self;
 }
 
+- (NSString *)formattedString
+{
+    NSRegularExpression* regex;
+    
+    regex = [NSRegularExpression regularExpressionWithPattern:@"(\\d{1,4})" options:0 error:NULL];
+    
+    NSArray* matches = [regex matchesInString:blz options:0 range:NSMakeRange(0, blz.length)];
+    NSMutableArray* result = [NSMutableArray arrayWithCapacity:matches.count];
+    
+    for (NSTextCheckingResult *match in matches) {
+        for (int i=1; i < [match numberOfRanges]; i++) {
+            NSRange range = [match rangeAtIndex:i];
+            
+            if (range.length > 0) {
+                NSString* matchText = [blz substringWithRange:range];
+                [result addObject:matchText];
+            }
+        }
+    }
+    
+    return [result componentsJoinedByString:@" "];
+}
+
+- (NSString *)lastGroup
+{
+    if (blz.length >= 4) {
+        return [blz substringFromIndex:([blz length] - 4)];
+    }
+    
+    return nil;
+}
+
 - (NSString*)string
 {
     return blz;

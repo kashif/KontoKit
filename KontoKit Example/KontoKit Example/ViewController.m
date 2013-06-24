@@ -17,7 +17,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    
+    self.kontoView = [[KKView alloc] initWithFrame:CGRectMake(15, 25, 290, 45)];
+    self.kontoView.delegate = self;
+    
+    [self.view addSubview:self.kontoView];
 }
 
 - (void)didReceiveMemoryWarning

@@ -11,7 +11,8 @@
 #define RedColor RGB(253,0,17)
 #define DefaultBoldFont [UIFont boldSystemFontOfSize:17]
 
-#define kKKViewCardBLZFieldStartX 84 + 200
+#define kKKViewCardNumberFieldStartX 84 + 200
+#define kPKViewCardNumberFieldEndX 84
 
 #define kKKViewPlaceholderViewAnimationDuration 0.25
 
@@ -59,7 +60,7 @@
     [self setupCardBLZField];
     [self setupCardNumberField];
     
-    [self.innerView addSubview:cardNumberField];
+    [self.innerView addSubview:cardBLZField];
     
     UIImageView *gradientImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 12, 34)];
     gradientImageView.image = [UIImage imageNamed:@"gradient"];
@@ -105,12 +106,11 @@
 
 - (void)setupCardBLZField
 {
-    cardBLZField = [[KKTextField alloc] initWithFrame:CGRectMake(kKKViewCardBLZFieldStartX,0,
-                                                                    60,20)];
+    cardBLZField = [[KKTextField alloc] initWithFrame:CGRectMake(12,0,170,20)];
     
     cardBLZField.delegate = self;
     
-    cardBLZField.placeholder = @"12345678";
+    cardBLZField.placeholder = @"123 45678";
     cardBLZField.keyboardType = UIKeyboardTypeNumberPad;
     cardBLZField.textColor = DarkGreyColor;
     cardBLZField.font = DefaultBoldFont;
@@ -121,7 +121,29 @@
 - (void)stateCardBLZ
 {
     if (!isInitialState) {
+        // Animate left
         isInitialState = YES;
+        
+        [UIView animateWithDuration:0.05 delay:0.0 options:UIViewAnimationOptionCurveEaseInOut
+                         animations:^{
+                             opaqueOverGradientView.alpha = 0.0;
+                         } completion:^(BOOL finished) {}];
+        [UIView animateWithDuration:0.400
+                              delay:0
+                            options:(UIViewAnimationOptionCurveEaseInOut|UIViewAnimationOptionAllowUserInteraction)
+                         animations:^{
+                             cardNumberField.frame = CGRectMake(kKKViewCardNumberFieldStartX,
+                                                             cardNumberField.frame.origin.y,
+                                                             cardNumberField.frame.size.width,
+                                                             cardNumberField.frame.size.height);
+                             cardBLZField.frame = CGRectMake(12,
+                                                                cardBLZField.frame.origin.y,
+                                                                cardBLZField.frame.size.width,
+                                                                cardBLZField.frame.size.height);
+                         }
+                         completion:^(BOOL completed) {
+                             [cardNumberField removeFromSuperview];
+                         }];
     }
     
     [self.cardBLZField becomeFirstResponder];
@@ -135,6 +157,25 @@
 - (void)stateMeta
 {
     isInitialState = NO;
+    
+    CGSize cardBLZSize = [self.cardBLZ.formattedString sizeWithFont:DefaultBoldFont];
+    CGSize lastGroupSize = [self.cardBLZ.lastGroup sizeWithFont:DefaultBoldFont];
+    CGFloat frameX = self.cardBLZField.frame.origin.x - (cardBLZSize.width - lastGroupSize.width);
+
+    [UIView animateWithDuration:0.05 delay:0.35 options:UIViewAnimationOptionCurveEaseInOut
+                     animations:^{
+                         opaqueOverGradientView.alpha = 1.0;
+                     } completion:^(BOOL finished) {}];
+    [UIView animateWithDuration:0.400 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        cardNumberField.frame = CGRectMake(84,
+                                        cardNumberField.frame.origin.y,
+                                        cardNumberField.frame.size.width,
+                                        cardNumberField.frame.size.height);
+        cardBLZField.frame = CGRectMake(frameX,
+                                           cardBLZField.frame.origin.y,
+                                           cardBLZField.frame.size.width,
+                                           cardBLZField.frame.size.height);
+    } completion:nil];
     
     [self addSubview:placeholderView];
     [self.innerView addSubview:cardNumberField];
@@ -186,23 +227,60 @@
     }
 
     [self setPlaceholderViewImage:[UIImage imageNamed:cardTypeName]];
-
 }
 
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    [self setPlaceholderToCardType];
+    
+    if ([textField isEqual:cardBLZField] && !isInitialState) {
+        [self stateCardNumber];
+    }
+}
 
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)replacementString
+{
+    if ([textField isEqual:cardBLZField]) {
+        return [self cardBLZShouldChangeCharactersInRange:range replacementString:replacementString];
+    }
+    
+    if ([textField isEqual:cardNumberField]) {
+        return [self cardNumberFieldShouldChangeCharactersInRange:range replacementString:replacementString];
+    }
+
+    return YES;
+}
+
+- (BOOL)cardBLZShouldChangeCharactersInRange: (NSRange)range replacementString:(NSString *)replacementString
+{
+    NSString *resultString = [cardBLZField.text stringByReplacingCharactersInRange:range withString:replacementString];
+    resultString = [KKTextField textByRemovingUselessSpacesFromString:resultString];
+    KKCardBLZ *cardCVC = [KKCardBLZ cardBLZWithString:resultString];
+    
+    [self setPlaceholderToCardType];
+    
+    return NO;
+}
+
+- (BOOL)cardNumberFieldShouldChangeCharactersInRange: (NSRange)range replacementString:(NSString *)replacementString
+{
+    NSString *resultString = [cardNumberField.text stringByReplacingCharactersInRange:range withString:replacementString];
+    resultString = [KKTextField textByRemovingUselessSpacesFromString:resultString];
+    KKCardNumber *cardNumber = [KKCardNumber cardNumberWithString:resultString];
+    
+    
+    return NO;
+}
+
+- (void)kkTextFieldDidBackSpaceWhileTextIsEmpty:(KKTextField *)textField
+{
+    if (textField == self.cardBLZField)
+        [self.cardNumberField becomeFirstResponder];
+}
 
 - (BOOL)isValid
 {
     return [self.cardBLZ isValid] && [self.cardNumber isValid];
 }
-
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
-}
-*/
 
 @end

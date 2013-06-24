@@ -13,6 +13,9 @@
 
 @property (nonatomic, readonly) NSString* string;
 @property (nonatomic, readonly) KKCardType cardType;
+@property (nonatomic, readonly) NSString * lastGroup;
+@property (nonatomic, readonly) NSString * formattedString;
+
 
 + (id)cardBLZWithString:(NSString *)string;
 - (id)initWithString:(NSString *)string;
@@ -20,5 +23,7 @@
 - (KKCardType)cardType;
 
 - (BOOL)isValid;
+- (NSString *)formattedString;
+- (NSString *)lastGroup;
 
 @end

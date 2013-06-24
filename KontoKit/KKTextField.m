@@ -45,8 +45,8 @@
                         change:(NSDictionary *)change context:(void *)context {
     if([keyPath isEqualToString:@"text"] && object == self) {
         if(self.text.length == 0) {
-            if([self.delegate respondsToSelector:@selector(pkTextFieldDidBackSpaceWhileTextIsEmpty:)])
-                [self.delegate performSelector:@selector(pkTextFieldDidBackSpaceWhileTextIsEmpty:)
+            if([self.delegate respondsToSelector:@selector(kkTextFieldDidBackSpaceWhileTextIsEmpty:)])
+                [self.delegate performSelector:@selector(kkTextFieldDidBackSpaceWhileTextIsEmpty:)
                                     withObject:self];
             self.text = kKKTextFieldSpaceChar;
         }
