@@ -12,12 +12,13 @@
 #define DefaultBoldFont [UIFont boldSystemFontOfSize:17]
 
 #define kKKViewCardNumberFieldStartX 84 + 200
-#define kPKViewCardNumberFieldEndX 84
+#define kKKViewCardNumberFieldEndX 84
 
 #define kKKViewPlaceholderViewAnimationDuration 0.25
 
 #import "KKView.h"
 #import "KKTextField.h"
+#import "konto_check.h"
 
 @interface KKView () <UITextFieldDelegate> {
 @private
@@ -40,8 +41,26 @@
     return self;
 }
 
+-(void)dealloc {
+    lut_cleanup();
+}
+
 - (void)setup
 {
+    int retval;
+    NSString * resourcePath = [[NSBundle mainBundle] resourcePath];
+    NSString * lutPath = [resourcePath stringByAppendingPathComponent:@"blz.lut2"];
+    
+    if ((retval = lut_init([lutPath UTF8String], 5, 0)) != OK)
+    {
+        NSLog(@"lut_init: %@", [[NSString alloc] initWithUTF8String:kto_check_retval2txt(retval)]);
+    }
+    
+    //retval = kto_check_blz("12070024", "3193422");
+    retval = kto_check_blz("12070024", "");
+    NSLog(@"kto_check_blz: %@", [[NSString alloc] initWithUTF8String:kto_check_retval2txt(retval)]);
+    
+    
     isInitialState = YES;
     isValidState   = NO;
     
@@ -90,32 +109,32 @@
     [placeholderView.layer addSublayer:clip];
 }
 
-- (void)setupCardNumberField
-{
-    cardNumberField = [[KKTextField alloc] initWithFrame:CGRectMake(12,0,170,20)];
-    
-    cardNumberField.delegate = self;
-    
-    cardNumberField.placeholder = @"0123456789";
-    cardNumberField.keyboardType = UIKeyboardTypeNumberPad;
-    cardNumberField.textColor = DarkGreyColor;
-    cardNumberField.font = DefaultBoldFont;
-    
-    [cardNumberField.layer setMasksToBounds:YES];
-}
-
 - (void)setupCardBLZField
 {
     cardBLZField = [[KKTextField alloc] initWithFrame:CGRectMake(12,0,170,20)];
     
     cardBLZField.delegate = self;
     
-    cardBLZField.placeholder = @"123 45678";
+    cardBLZField.placeholder = @"Bankleitzahl";
     cardBLZField.keyboardType = UIKeyboardTypeNumberPad;
     cardBLZField.textColor = DarkGreyColor;
     cardBLZField.font = DefaultBoldFont;
     
     [cardBLZField.layer setMasksToBounds:YES];
+}
+
+- (void)setupCardNumberField
+{
+    cardNumberField = [[KKTextField alloc] initWithFrame:CGRectMake(12,0,170,20)];
+    
+    cardNumberField.delegate = self;
+    
+    cardNumberField.placeholder = @"Konto-Nr.";
+    cardNumberField.keyboardType = UIKeyboardTypeNumberPad;
+    cardNumberField.textColor = DarkGreyColor;
+    cardNumberField.font = DefaultBoldFont;
+    
+    [cardNumberField.layer setMasksToBounds:YES];
 }
 
 - (void)stateCardBLZ
@@ -167,7 +186,7 @@
                          opaqueOverGradientView.alpha = 1.0;
                      } completion:^(BOOL finished) {}];
     [UIView animateWithDuration:0.400 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-        cardNumberField.frame = CGRectMake(84,
+        cardNumberField.frame = CGRectMake(kKKViewCardNumberFieldEndX,
                                         cardNumberField.frame.origin.y,
                                         cardNumberField.frame.size.width,
                                         cardNumberField.frame.size.height);
@@ -255,19 +274,72 @@
 {
     NSString *resultString = [cardBLZField.text stringByReplacingCharactersInRange:range withString:replacementString];
     resultString = [KKTextField textByRemovingUselessSpacesFromString:resultString];
-    KKCardBLZ *cardCVC = [KKCardBLZ cardBLZWithString:resultString];
+    KKCardBLZ *cardBLZ = [KKCardBLZ cardBLZWithString:resultString];
+    
+    if (replacementString.length > 0) {
+        cardBLZField.text = [cardBLZ formattedStringWithTrail];
+    } else {
+        cardBLZField.text = [cardBLZ formattedString];
+    }
     
     [self setPlaceholderToCardType];
     
+    if ([cardBLZ isValid]) {
+        [self textFieldIsValid:cardBLZField];
+        [self stateMeta];
+        
+    //} else if ([cardNumber isValidLength] && ![cardBLZ isValidLuhn]) {
+    //    [self textFieldIsInvalid:cardNumberField withErrors:YES];
+        
+    //} else if (![cardBLZ isValidLength]) {
+    //    [self textFieldIsInvalid:cardNumberField withErrors:NO];
+    }
+    
     return NO;
 }
+
+- (void)checkValid
+{
+    if ([self isValid] && !isValidState) {
+        isValidState = YES;
+        
+        if ([self.delegate respondsToSelector:@selector(paymentView:withCard:isValid:)]) {
+            [self.delegate paymentView:self withCard:self.card isValid:YES];
+        }
+        
+    } else if (![self isValid] && isValidState) {
+        isValidState = NO;
+        
+        if ([self.delegate respondsToSelector:@selector(paymentView:withCard:isValid:)]) {
+            [self.delegate paymentView:self withCard:self.card isValid:NO];
+        }
+    }
+}
+
+- (void)textFieldIsValid:(UITextField *)textField {
+    textField.textColor = DarkGreyColor;
+    [self checkValid];
+}
+
 
 - (BOOL)cardNumberFieldShouldChangeCharactersInRange: (NSRange)range replacementString:(NSString *)replacementString
 {
     NSString *resultString = [cardNumberField.text stringByReplacingCharactersInRange:range withString:replacementString];
     resultString = [KKTextField textByRemovingUselessSpacesFromString:resultString];
     KKCardNumber *cardNumber = [KKCardNumber cardNumberWithString:resultString];
+    KKCardType cardType = [[KKCardNumber cardNumberWithString:cardBLZField.text] cardType];
+
     
+    //if ( ![cardNumber isPartiallyValidWithType:cardType] ) return NO;
+    
+    // Strip non-digits
+    cardNumberField.text = [cardNumber string];
+    
+    //if ([cardNumber isValidWithType:cardType]) {
+    //    [self textFieldIsValid:cardNumberField];
+    //} else {
+    //    [self textFieldIsInvalid:cardNumberField withErrors:NO];
+    //}
     
     return NO;
 }

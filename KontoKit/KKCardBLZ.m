@@ -41,7 +41,7 @@
 {
     NSRegularExpression* regex;
     
-    regex = [NSRegularExpression regularExpressionWithPattern:@"(\\d{1,4})" options:0 error:NULL];
+    regex = [NSRegularExpression regularExpressionWithPattern:@"(\\d{0,3})" options:0 error:NULL];
     
     NSArray* matches = [regex matchesInString:blz options:0 range:NSMakeRange(0, blz.length)];
     NSMutableArray* result = [NSMutableArray arrayWithCapacity:matches.count];
@@ -60,6 +60,33 @@
     return [result componentsJoinedByString:@" "];
 }
 
+- (BOOL)isValidLength
+{
+    return blz.length == 8;
+}
+
+- (NSString *)formattedStringWithTrail
+{
+    NSString *string = [self formattedString];
+    NSRegularExpression* regex;
+    
+    // No trailing space needed
+    if ([self isValidLength]) {
+        return string;
+    }
+    
+    regex = [NSRegularExpression regularExpressionWithPattern:@"(?:^|\\s)(\\d{2,3})$" options:0 error:NULL];
+    
+    NSUInteger numberOfMatches = [regex numberOfMatchesInString:string options:0 range:NSMakeRange(0, string.length)];
+    
+    if (numberOfMatches == 0) {
+        // Not at the end of a group of digits
+        return string;
+    } else {
+        return [NSString stringWithFormat:@"%@ ", string];
+    }
+}
+
 - (NSString *)lastGroup
 {
     if (blz.length >= 4) {
@@ -76,7 +103,7 @@
 
 - (BOOL)isValid
 {
-    return false;
+    return [self isValidLength];
 }
 
 - (KKCardType)cardType

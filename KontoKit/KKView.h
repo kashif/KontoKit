@@ -28,8 +28,8 @@
 
 @property IBOutlet UIView* innerView;
 @property IBOutlet UIView* clipView;
-@property IBOutlet KKTextField* cardNumberField;
 @property IBOutlet KKTextField* cardBLZField;
+@property IBOutlet KKTextField* cardNumberField;
 @property IBOutlet UIImageView* placeholderView;
 
 @property id <KKViewDelegate> delegate;
